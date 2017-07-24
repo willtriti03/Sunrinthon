@@ -9,6 +9,7 @@ public class WifiShare : MonoBehaviour
     public GameObject paricle;
     Collider2D col;
     public GameObject[] team = new GameObject[12];
+    public NoticeManager notice;
     float time = 0, time2 = 0;
     float scale;
     bool start = false;
@@ -36,6 +37,8 @@ public class WifiShare : MonoBehaviour
                 ////////////////////////////////////////////////
                 for (int i = 0; i < 12; ++i)
                     team[i].GetComponent<Team>().AddHealth(-5);
+                notice.NoticeMessage(7);
+
             }
         }
         if (!start && !objectState)

@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Strore : MonoBehaviour {
+public class Strore : MonoBehaviour
+{
     bool objectState = true;
     public GameObject paricle;
     public GameObject gm;
+    public NoticeManager notice;
     Collider2D col;
     float time = 0, time2 = 0;
     float scale;
     bool start = false;
-    int cost=5;
+    int cost = 5;
     // Use this for initialization
 
     void Start()
@@ -35,6 +37,7 @@ public class Strore : MonoBehaviour {
                 ////////////////////////////////////////////////
                 if (gm.GetComponent<GameManager>().useMoney(cost))
                 {
+                    notice.NoticeMessage(2);
                     gm.GetComponent<GameManager>().AddCoin(-cost);
                     gm.GetComponent<GameManager>().AddHp(1);
                     cost += 5;

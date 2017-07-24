@@ -9,8 +9,9 @@ public class NoteBook : MonoBehaviour
     bool objectState = true;
     public GameObject paricle;
     Collider2D col;
-    public GameObject team; 
-    float time = 0, time2 = 0;
+    public GameObject team;
+    public NoticeManager notice;
+      float time = 0, time2 = 0;
     float scale;
     bool start = false;
     // Use this for initialization
@@ -36,6 +37,7 @@ public class NoteBook : MonoBehaviour
                 time = 0;
                 ////////////////////////////////////////////////
                 team.GetComponent<Team>().AddHealth(-30);
+                notice.NoticeMessage(1);
             }
         }
         if (!start && !objectState)

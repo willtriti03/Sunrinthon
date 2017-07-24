@@ -6,12 +6,17 @@ public class CameraMove : MonoBehaviour {
 
     public GameObject player;       //Public variable to store a reference to the player game object
 
-
+    public AudioClip soundExplosion;    //사운드 파일을 가진다
+    AudioSource audio;
     private Vector3 offset;         //Private variable to store the offset distance between the player and camera
 
     // Use this for initialization
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+        audio.loop = true;
+        audio.clip = soundExplosion;
+        audio.Play();
         //Calculate and store the offset value by getting the distance between the player's position and camera's position.
         offset = transform.position - player.transform.position;
     }

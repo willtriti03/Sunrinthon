@@ -6,6 +6,9 @@ public class Switch : MonoBehaviour {
     bool objectState = true;
     public GameObject paricle;
     public GameObject blackout;
+    public NoticeManager notice;
+
+
     Collider2D col;
     public GameObject[] team = new GameObject[12];
     float time = 0, time2 = 0;
@@ -36,6 +39,7 @@ public class Switch : MonoBehaviour {
                 for (int i = 0; i < 12; ++i)
                     team[i].GetComponent<Team>().AddHealth(-5);
                 blackout.GetComponent<light>().TurnOn();
+                notice.NoticeMessage(8);
             }
         }
         if (!start && !objectState)

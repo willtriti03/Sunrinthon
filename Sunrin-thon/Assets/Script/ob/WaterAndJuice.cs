@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaterAndJuice : MonoBehaviour {
     bool objectState = true;
     public GameObject paricle;
+    public NoticeManager notice;
     Collider2D col;
     public GameObject team;
     float time = 0, time2 = 0;
@@ -33,6 +34,8 @@ public class WaterAndJuice : MonoBehaviour {
                 time = 0;
                 ////////////////////////////////////////////////
                 team.GetComponent<Team>().AddHealth(-5);
+  
+                notice.NoticeMessage(4);
             }
         }
         if (!start && !objectState)

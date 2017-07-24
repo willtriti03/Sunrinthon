@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public Image[] heart = new Image[3];
     public Team[] deathTeam = new Team[12];
 
+
     public float time = 72000f;
     float tmp;
     float token = 0f;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour {
     int coin = 0;
 	// Use this for initialization
 	void Start () {
+
         SetHp();
         SetCoin();
 	}

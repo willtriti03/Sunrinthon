@@ -6,6 +6,7 @@ public class Money : MonoBehaviour {
     bool objectState = true;
     public GameObject paricle;
     public GameObject gm;
+    public NoticeManager notice;
     Collider2D col;
     public GameObject team;
     float time = 0, time2 = 0;
@@ -34,6 +35,7 @@ public class Money : MonoBehaviour {
                 time = 0;
                 ////////////////////////////////////////////////
                 gm.GetComponent<GameManager>().AddCoin(Random.Range(3, 7));
+                notice.NoticeMessage(6);
             }
         }
         if (!start && !objectState)

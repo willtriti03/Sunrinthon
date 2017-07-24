@@ -6,6 +6,7 @@ public class Concent : MonoBehaviour {
 
     bool objectState = true;
     public GameObject paricle;
+    public NoticeManager notice;
     Collider2D col;
     public GameObject team;
     float time = 0, time2 = 0;
@@ -34,6 +35,7 @@ public class Concent : MonoBehaviour {
                 time = 0;
                 ////////////////////////////////////////////////
                 team.GetComponent<Team>().AddHealth(-10);
+                notice.NoticeMessage(9);
             }
         }
         if (!start && !objectState)

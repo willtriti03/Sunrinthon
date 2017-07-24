@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Tablet : MonoBehaviour {
     bool objectState = true;
     public GameObject paricle;
+    public NoticeManager notice;
+
     Collider2D col;
     public GameObject team;
     float time = 0, time2 = 0;
@@ -34,6 +36,7 @@ public class Tablet : MonoBehaviour {
                 time = 0;
                 ////////////////////////////////////////////////
                 team.GetComponent<Team>().AddHealth(-10);
+                notice.NoticeMessage(3);
             }
         }
         if (!start && !objectState)
